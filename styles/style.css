@@ -1,0 +1,303 @@
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(../fonts/Jost-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(../fonts/Jost-Italic-VariableFont_wght.ttf) format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    font-family: "Jost", sans-serif;
+}
+
+/** Breakpoints */
+
+/** 1200px oder schmaler */
+@media (max-width: 75em) {
+}
+/** 992px oder schmaler */
+@media (max-width: 62em) {
+}
+/** 768px oder schmaler */
+@media (max-width: 48em) {
+}
+/** 576px oder schmaler */
+@media (max-width: 36em) {
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0px auto;
+}
+
+.header {
+    height: 40rem; /* 640px*/
+    min-height: calc(22rem + 32vw); /* 368px + 819px = 1187px*/
+    position: relative;
+    overflow: hidden;
+}
+
+.header__slope {
+    background-image: linear-gradient(-5.71deg, white 49.9%, transparent 50.1%);
+    background-repeat: no-repeat;
+    background-position: center 100%; /* ось x и ось y для двух слоев*/
+    background-size: 100vw 10vw;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10vw;
+    z-index: 1;
+}
+
+@media (max-width: 62em) {
+    .header__slope {
+        bottom: 90px;
+    }
+}
+
+@media (max-width: 48em) {
+    .header__slope {
+        bottom: 202px;
+    }
+}
+
+@media (max-width: 36em) {
+    .header__slope {
+        bottom: 240px;
+    }
+}
+
+.header__container {
+    position: relative;
+}
+
+.header::before {
+    content: ""; /* чтобы этот пвесдоэлемент заработал нужно обязательно добавить это свойство (оно может быть пустым)*/
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    top: 0;
+
+    background-image: url(../images/pexels-benjamin-suter-3617500.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+}
+
+@media (max-width: 62em) {
+    .header::before {
+        bottom: 90px;
+    }
+}
+
+@media (max-width: 48em) {
+    .header::before {
+        bottom: 202px;
+    }
+}
+
+@media (max-width: 36em) {
+    .header::before {
+        bottom: 240px;
+    }
+}
+
+@media (max-width: 36em) {
+    .header::before {
+        background-size: cover;
+    }
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    /* 2000 px im Browser <=> 100vw */
+    /* ~660 px hoch das Bild <=> 33vw */
+    height: 33vw;
+    width: 100vw;
+
+    background-image: url(../images/pexels-benjamin-suter-3617500-mountains.webp);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+}
+
+@media (max-width: 62em) {
+    .header::after {
+        bottom: 90px;
+    }
+}
+
+@media (max-width: 48em) {
+    .header::after {
+        bottom: 202px;
+    }
+}
+
+@media (max-width: 36em) {
+    .header::after {
+        display: none;
+    }
+
+    .header::before {
+        bottom: 240px;
+    }
+}
+
+.icon {
+    fill: currentColor;
+    height: 1em;
+    vertical-align: middle; /* последние три свойства выравнивают элементы относительно высоты текста*/
+    position: relative;
+    top: -0.075em;
+}
+
+.nav-list-item {
+    list-style-type: none;
+    display: block;
+    float: left;
+}
+
+@media (max-width: 62em) {
+    /*992px*/
+    .nav-list-item--mobile-hidden {
+        display: none;
+    }
+}
+
+.nav-list-item-menu {
+    float: right;
+    font-size: 3rem;
+}
+
+.nav-list-item-menu .nav-list-item-link {
+    margin-top: 0.4rem;
+}
+
+.nav-list-item-menu .nav-list-item-link:hover {
+    /*добавляем к стилю тот стиль который хотим изменить*/
+    border-bottom: none;
+    color: rgb(200, 200, 200);
+}
+
+.nav-list-item-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: block;
+    text-shadow: 0 0 0.5rem black; /*добавляет тень к тексту*/
+}
+
+.nav-list-item-link:hover {
+    border-bottom: 0.2rem solid rgb(0, 225, 156);
+}
+
+.nav-list-item-link-logo:hover {
+    border-bottom: none;
+    color: rgb(200, 200, 200);
+}
+
+.nav-list-item-logo {
+    width: 4rem;
+    height: 4rem;
+    fill: currentColor;
+}
+
+.nav-list-item-link-logo {
+    margin-top: 0.9rem;
+}
+
+.header__heading-container {
+    clear: both; /* отменяет свойства float и позиционирует элемент с новой строки*/
+}
+
+.header__heading-main {
+    padding-top: 5rem;
+    color: white;
+    text-transform: uppercase; /* делает все литеры заглавными*/
+    font-size: 7rem;
+    line-height: 92%;
+    text-align: center;
+    text-shadow: 0 0 0.5rem rgb(0, 0, 0.5);
+
+    animation-name: header__heading-main-font-weight;
+    animation-delay: 0.75s;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+
+@keyframes header__heading-main-font-weight {
+    0% {
+        opacity: 0;
+        font-weight: 100;
+    }
+    100% {
+        opacity: 1;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 62em) {
+    .header__heading-main {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 48em) {
+    .header__heading-main {
+        font-size: 3rem;
+    }
+}
+
+/*                                 FUNKTIONIERT NICHT!!!!
+.header__heading-sub {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 0.25rem;
+    text-align: center;
+    margin-top: 1rem;
+    text-shadow: 0 0 0.5rem rgb(0, 0, 0.5);
+}
+*/
+
+p {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 0.25rem;
+    text-align: center;
+    margin-top: 1rem;
+    text-shadow: 0 0 0.5rem rgb(0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 48em) {
+    p {
+        font-size: 1rem;
+    }
+}
